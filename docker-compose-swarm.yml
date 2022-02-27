@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     web:
-        image: guguchkovd/bgapp-web-nginx
+        image: guguchkovd/bgapp-web-nginx:1.0
         deploy:
             replicas: 3
         ports:
