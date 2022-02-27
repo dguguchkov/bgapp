@@ -1,15 +1,17 @@
 version: "3.8"
 services:
     web:
-        image: guguchkovd/bgapp-web-nginx
+        image: guguchkovd/bgapp-web
         deploy:
-            replicas: 3
+            replicas: 5
         ports:
-            - 8081:8080
+            - 8081:80
+        volumes:
+            - "${PROJECT_ROOT}:/var/www/html:ro"
         networks:
             - app-network
     db:
-        image: guguchkovd/bgapp_db_nginx
+        image: guguchkovd/bgapp-db
         networks:
             - app-network
         environment:
